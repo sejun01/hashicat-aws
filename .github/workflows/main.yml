@@ -1,0 +1,27 @@
+name: AWS Role assume test
+on:
+  workflow_dispatch:
+    inputs:
+      comment:
+        description: 'An optional comment'
+        required: false
+
+jobs:
+  build:
+    name: Build image
+    runs-on: devops-prd-jenkins-agent-runner
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        role-skip-session-tagging: true
+        role-to-assume: arn:aws:iam::492318887304:role/actions-demo-test
+#        role-to-assume: arn:aws:iam::492318887304:role/infrapoc_devops_inframgmt_ecode
+#        role-to-assume: ${{ secrets.AWS_INFRAPOC_ROLE }}
+        aws-region: ${{ secrets.AWS_REGION }}
+        role-session-name: GitHubActions
+#        role-session-name: infrapoc-session
