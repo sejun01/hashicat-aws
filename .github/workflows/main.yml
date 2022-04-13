@@ -5,7 +5,8 @@ on:
       comment:
         description: 'An optional comment'
         required: false
-
+#permissions:
+#  id-token: write
 jobs:
   build:
     name: Build image
@@ -22,6 +23,6 @@ jobs:
         role-to-assume: arn:aws:iam::492318887304:role/actions-demo-test
 #        role-to-assume: arn:aws:iam::492318887304:role/infrapoc_devops_inframgmt_ecode
 #        role-to-assume: ${{ secrets.AWS_INFRAPOC_ROLE }}
-        aws-region: ${{ secrets.AWS_REGION }}
+        aws-region: us-east-1
         role-session-name: GitHubActions
 #        role-session-name: infrapoc-session
