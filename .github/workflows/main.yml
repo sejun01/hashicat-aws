@@ -5,8 +5,8 @@ on:
       comment:
         description: 'An optional comment'
         required: false
-#permissions:
-#  id-token: write
+permissions:
+  id-token: write
 jobs:
   build:
     name: Build image
