@@ -21,8 +21,6 @@ jobs:
       with:
         role-skip-session-tagging: true
         role-to-assume: arn:aws:iam::492318887304:role/devops-action-demo
-#        role-to-assume: arn:aws:iam::492318887304:role/infrapoc_devops_inframgmt_ecode
 #        role-to-assume: ${{ secrets.AWS_INFRAPOC_ROLE }}
         aws-region: us-east-1
-        role-session-name: GitHubActions
-#        role-session-name: infrapoc-session
+#        role-session-name: GitHubActions
