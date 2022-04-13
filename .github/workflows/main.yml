@@ -9,7 +9,7 @@ on:
 jobs:
   build:
     name: Build image
-    runs-on: devops-prd-jenkins-agent-runner
+    runs-on: ubuntu-latest
 
     steps:
     - name: Check out code
